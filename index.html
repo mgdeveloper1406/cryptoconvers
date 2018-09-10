@@ -4,7 +4,7 @@
 <!-- Meta, title, CSS, favicons, etc. -->
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta charset="utf-8">
     <title>Crypto Converter</title>
 <!-- Meta, title, CSS, favicons, etc. -->  
@@ -18,24 +18,29 @@
 <!-------------------------JS------------------------------------->
   <script src="vendor/jquery/jquery.min.js"></script>
   <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
-  <script src="angular.min.js"></script>
+  <script src="angular/angular.min.js"></script>
 <!--------------------------------------------------------------->
 
 </head>
 
-<body ng-app = "myApp" ng-controller="myCtrl">
+<body ng-app = "myApp" ng-controller="myCtrl" style="background-color: whitesmoke">
 
   <div class="container">
     <form>
       <div class="form-group">
-        <h1 class="text-center">Cryptocurrency</h1>
-        <h2 class="text-center">Converter</h2>
-          <div class="table-responsive">
+
+<div class="container jumbotron">
+    <h1 class="text-center">Cryptocurrency Converter</h1>
+
+    <p class="text-center">Convert Various Cryptocurrency into Fiat Currency</p>
+</div>
+          <div class="table-responsive" style="padding-top: 50px;">
               <table class="table table-bordered">
                 <tbody>
                     <tr>
                        <td>
-                          <select class="form-control" ng-model="selectedCoin" ng-options="x for (x, y) in crypto" placeholder="Select Cryptocurrency" readonly>
+                          <select class="form-control" ng-model="selectedCoin" ng-options="x for (x, y) in crypto" readonly>
+                            <option value="" disabled selected>Select Cryptocurrency</option>
                             </select>
                         </td>
 
@@ -46,7 +51,8 @@
 
                     <tr>
                         <td>
-                            <select class="form-control" ng-model="selectedCurrency" ng-options="x for x in currency"  placeholder="Select Fiat Currency" readonly>
+                            <select class="form-control" ng-model="selectedCurrency" ng-options="x for x in currency" readonly>
+                              <option value="" disabled selected>Select Fiat Currency</option>
                             </select>
                         </td>
 
@@ -63,6 +69,8 @@
     </form>  
   </div>
 
+<footer class="text-center" style="padding-top: 50px;"><a target="_blank" href="https://github.com/ThaTruth24">@ThaTruth24</a> <a target="_blank" href="https://twitter.com/EgboThankgod">@Egbo ThankGod</a></footer>
+
 </body>
-<script src="ctrl.js"></script>
+<script src="angular/ctrl.js"></script>
 </html>
