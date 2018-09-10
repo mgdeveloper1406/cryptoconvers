@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<!-- Meta, title, CSS, favicons, etc. -->
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+    <title>Cryptocompare</title>
+<!-- Meta, title, CSS, favicons, etc. -->  
+
+<!----------------- bootstrap ----------------------->
+    <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="vendor/font-awesome/css/font-awesome.min.css">
+<!----------------- bootstrap ------------------------->
+
+
+<!-------------------------JS------------------------------------->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+  <script src="angular.min.js"></script>
+<!--------------------------------------------------------------->
+
+</head>
+
+<body ng-app = "myApp" ng-controller="myCtrl">
+
+  <div class="container">
+    <form>
+      <div class="form-group">
+        <h1 class="text-center">Cryptocurrency</h1>
+        <h2 class="text-center">Converter</h2>
+          <div class="table-responsive">
+              <table class="table table-bordered">
+                <tbody>
+                    <tr>
+                       <td>
+                          <select class="form-control" ng-model="selectedCoin" ng-options="x for (x, y) in crypto" placeholder="Select Cryptocurrency" readonly>
+                            </select>
+                        </td>
+
+                        <td>
+                          <input type="number" class="form-control margintop" ng-model = "coin" >
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <select class="form-control" ng-model="selectedCurrency" ng-options="x for x in currency"  placeholder="Select Fiat Currency" readonly>
+                            </select>
+                        </td>
+
+                        <td>
+                          <input type="number" class="form-control margintop" ng-model="selectedCoin()">
+                        </td>
+
+                    </tr>
+
+                </tbody>
+              </table>
+          </div>
+      </div>
+    </form>  
+  </div>
+
+</body>
+<script src="ctrl.js"></script>
+</html>
